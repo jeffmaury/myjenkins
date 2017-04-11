@@ -8,7 +8,7 @@ pipeline {
     }
     stage('pull') {
       steps {
-        git 'https://github.com/jbosstools/jbosstools-openshift.git'
+        git 'https://github.com/jbosstools/jbosstools-build-ci.git'
       }
     }
   }
