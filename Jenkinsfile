@@ -13,8 +13,13 @@ pipeline {
     }
     stage('sub-repos') {
       steps {
-        dir(path: 'openshift') {
+        dir(path: 'util') {
           git 'https://github.com/jbosstools/jbosstools-openshift.git'
+          dir(path: 'jbosstools-openshift') {
+            sh '''../../findlostpaches.sh jbosstools-4.4.x master
+../../findlostpaches.sh master jbosstools-4.4.x'''
+          }
+          
         }
         
       }
