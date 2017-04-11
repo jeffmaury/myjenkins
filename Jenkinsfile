@@ -13,12 +13,8 @@ pipeline {
     }
     stage('sub-repos') {
       steps {
-        ws(dir: 'repos') {
-          ws(dir: 'openshift') {
-            git 'https://github.com/jbosstools/jbosstools-openshift.git'
-            echo pwd()
-          }
-          
+        dir(path: 'openshift') {
+          git 'https://github.com/jbosstools/jbosstools-openshift.git'
         }
         
       }
