@@ -16,7 +16,7 @@ pipeline {
         ws(dir: 'repos') {
           ws(dir: 'openshift') {
             git 'https://github.com/jbosstools/jbosstools-openshift.git'
-            echo '${pwd()}'
+            echo 'pwd()'
           }
           
         }
