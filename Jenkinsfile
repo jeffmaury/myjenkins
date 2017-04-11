@@ -15,7 +15,7 @@ pipeline {
       steps {
         ws(dir: 'repos') {
           ws(dir: 'openshift') {
-            git 'https://github.com/jbosstools-openshift.git'
+            git 'https://github.com/jbosstools/jbosstools-openshift.git'
             pwd()
           }
           
