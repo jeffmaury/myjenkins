@@ -11,5 +11,17 @@ pipeline {
         git 'https://github.com/jbosstools/jbosstools-build-ci.git'
       }
     }
+    stage('sub-repos') {
+      steps {
+        ws(dir: 'repos') {
+          ws(dir: 'openshift') {
+            git 'https://github.com/jbosstools-openshift.git'
+            pwd()
+          }
+          
+        }
+        
+      }
+    }
   }
 }
