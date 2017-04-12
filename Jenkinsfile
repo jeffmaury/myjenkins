@@ -9,7 +9,7 @@ pipeline {
     stage('pull') {
       steps {
         dir(path: 'build-ci') {
-          git(url: 'https://github.com/jeffmaury/jbosstools-build-ci.git', branch: 'findlostpatches-dryrun')
+          git 'https://github.com/jbosstools/jbosstools-build-ci.git'
         }
         
       }
