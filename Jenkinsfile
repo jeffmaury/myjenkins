@@ -26,5 +26,10 @@ pipeline {
         
       }
     }
+    stage('Send mail') {
+      steps {
+        emailext(attachLog: true, subject: 'Check diffs', to: 'jmaury@redhat.com', body: 'Log')
+      }
+    }
   }
 }
