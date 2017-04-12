@@ -1,12 +1,7 @@
 pipeline {
   agent any
   stages {
-    stage('start') {
-      steps {
-        echo 'Started'
-      }
-    }
-    stage('pull') {
+    stage('get build-ci') {
       steps {
         dir(path: 'build-ci') {
           git(url: 'https://github.com/jeffmaury/jbosstools-build-ci.git', branch: 'findlostpatches-dryrun')
@@ -14,7 +9,7 @@ pipeline {
         
       }
     }
-    stage('sub-repos') {
+    stage('check components') {
       steps {
         script {
           def comps = ["Aerogear","Arquillian","Base","BrowserSim","build-sites","Central","Discovery","Forge","Freemarker","Hibernate","Integration-Tests ","JavaEE","JST","LiveReload","OpenShift","Server","versionwatch","VPE","Webservices"]
