@@ -19,7 +19,6 @@ pipeline {
         dir(path: 'jbosstools-openshift') {
           git 'https://github.com/jbosstools/jbosstools-openshift.git'
           sh '''#!/bin/bash
-ls -l /bin/*
 ../build-ci/util/findlostpatchesonerepository.sh jbosstools-4.4.x master
 '''
         }
