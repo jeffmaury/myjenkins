@@ -12,7 +12,7 @@ pipeline {
     stage('check components') {
       steps {
         script {
-          def comps = ["Aerogear","Arquillian","Base","BrowserSim","build-sites","Central","Discovery","Forge","Freemarker","Hibernate","Integration-Tests ","JavaEE","JST","LiveReload","OpenShift","Server","versionwatch","VPE","Webservices"]
+          def comps = ["Aerogear","Arquillian","Base","BrowserSim","build-sites","Central","Discovery","Forge","Freemarker","Hibernate","Integration-Tests","JavaEE","JST","LiveReload","OpenShift","Server","versionwatch","VPE","Webservices"]
           for (comp in comps) {
             comp = comp.toLowerCase()
             dir(path: "jbosstools-${comp}") {
