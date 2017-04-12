@@ -18,7 +18,8 @@ pipeline {
       steps {
         dir(path: 'jbosstools-openshift') {
           git 'https://github.com/jbosstools/jbosstools-openshift.git'
-          sh '''ls -l /bin/*
+          sh '''#!/bin/bash
+ls -l /bin/*
 '''
         }
         
