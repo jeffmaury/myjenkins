@@ -15,13 +15,11 @@ pipeline {
     }
     stage('sub-repos') {
       steps {
-        dir(path: 'util') {
+        dir(path: 'jbosstools-openshift') {
           git 'https://github.com/jbosstools/jbosstools-openshift.git'
-          dir(path: 'jbosstools-openshift') {
-            sh '''git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-sh ../findlostpatchesonerepository.sh jbosstools-4.4.x master
-sh ../findlostpatchesonerepository.sh master jbosstools-4.4.x'''
-          }
+          sh '''git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+sh ../build-ci/util/findlostpatchesonerepository.sh jbosstools-4.4.x master
+sh ../build-ci/util/findlostpatchesonerepository.sh master jbosstools-4.4.x'''
           
         }
         
