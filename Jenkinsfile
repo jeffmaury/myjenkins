@@ -19,6 +19,7 @@ pipeline {
         dir(path: 'jbosstools-openshift') {
           git 'https://github.com/jbosstools/jbosstools-openshift.git'
           sh '''set +x
+set +e
 git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 sh ../build-ci/util/findlostpatchesonerepository.sh jbosstools-4.4.x master
 sh ../build-ci/util/findlostpatchesonerepository.sh master jbosstools-4.4.x'''
