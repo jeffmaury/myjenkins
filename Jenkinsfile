@@ -8,7 +8,9 @@ pipeline {
     }
     stage('pull') {
       steps {
-        git 'https://github.com/jbosstools/jbosstools-build-ci.git'
+        dir(path: 'build-ci') {
+          git 'https://github.com/jbosstools/jbosstools-build-ci.git'
+        }
       }
     }
     stage('sub-repos') {
