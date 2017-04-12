@@ -16,8 +16,8 @@ pipeline {
         dir(path: 'util') {
           git 'https://github.com/jbosstools/jbosstools-openshift.git'
           dir(path: 'jbosstools-openshift') {
-            sh '''../findlostpatches.sh jbosstools-4.4.x master
-../findlostpatches.sh master jbosstools-4.4.x'''
+            sh '''../findlostpatchesonerepository.sh jbosstools-4.4.x master
+../findlostpatchesonerepository.sh master jbosstools-4.4.x'''
           }
           
         }
