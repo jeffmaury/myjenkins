@@ -16,6 +16,9 @@ pipeline {
           for (comp in comps) {
             comp = comp.toLowerCase()
             dir(path: "jbosstools-${comp}") {
+              echo "========================================================================================"
+              echo "Checking ${comp}"
+              echo "========================================================================================"
               git "https://github.com/jbosstools/jbosstools-${comp}.git"
               sh '''#!/bin/bash
 ../build-ci/util/findlostpatchesonerepository.sh jbosstools-4.4.x master
